@@ -146,4 +146,35 @@ Keep this in mind while designing your agentic systems using Arq AI.
 │                                               │                       
 │                                               │                       
 │                                               │                       
-└───────────────────────────────────────────────┘                       
+└───────────────────────────────────────────────┘
+
+## Usage
+
+### Text/Text Streaming
+
+```python
+from arq_ai import ArqAI
+
+config = {
+    "openai": {
+        "api_key": "your-openai-api-key",
+    },
+    "agents": [
+        {
+            "name": "research_specialist",
+            "instructions": "You are an expert researcher who synthesizes complex information clearly.",
+            "specialization": "Research and knowledge synthesis",
+        },
+        {
+            "name": "customer_support",
+            "instructions": "You provide friendly, helpful customer support responses.",
+            "specialization": "Customer inquiries",
+        }
+    ],
+}
+
+arq_ai = ArqAI(config=config)
+
+async for response in arq_ai.process("user123", "What are the latest AI developments?"):
+    print(response, end="")
+                

@@ -147,6 +147,7 @@ Keep this in mind while designing your agentic systems using Arq AI.
 │                                               │                       
 │                                               │                       
 └───────────────────────────────────────────────┘
+```
 
 ## Usage
 
